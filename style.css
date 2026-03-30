@@ -316,9 +316,22 @@ button.ghost:hover{
     h1{
         font-size: 22px;
     }
+
+    #goToSignup{
+        color: #1877f2;
+    }
+
+    #goToLogin{
+    color: #DB4437;
+    text-underline-position: above;
+    }
 }
 
 #pawan{
-    padding: 0 60px; /* left-right space */
+    padding: 0 80px; /* left-right space */
     display: flex;
 }
+
+#goToSignup{
+        color: #1877f2;
+    }
