@@ -252,7 +252,7 @@ button.ghost:hover{
     100%{transform: scale(1);}
 }
 
-/* MOBILE RESPONSIVE */
+/*/* MOBILE RESPONSIVE */
 @media (max-width:768px){
 
     body{
@@ -263,32 +263,42 @@ button.ghost:hover{
     .container{
         width: 100%;
         height: auto;
+        overflow: hidden;
+        position: relative;
     }
 
     .form-container{
-        position: relative;
+        position: absolute;
         width: 100%;
         height: auto;
-        transform: none !important;
-        opacity: 1 !important;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
-    .sign-in-container,
-    .sign-up-container{
-        position: relative;
-        width: 100%;
+    /* Default */
+    .sign-in-container{
+        transform: translateX(0);
+        opacity: 1;
+        z-index: 2;
     }
 
     .sign-up-container{
-        display: none;
+        transform: translateX(100%);
+        opacity: 0;
+        z-index: 1;
+    }
+
+    /* Active Slide */
+    .container.right-panel-active .sign-in-container{
+        transform: translateX(-100%);
+        opacity: 0;
     }
 
     .container.right-panel-active .sign-up-container{
-        display: block;
-    }
-
-    .container.right-panel-active .sign-in-container{
-        display: none;
+        transform: translateX(0);
+        opacity: 1;
+        z-index: 5;
     }
 
     .overlay-container{
@@ -308,17 +318,7 @@ button.ghost:hover{
     }
 }
 
-.switch-text{
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.switch-text span{
-    color: teal;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.switch-text span:hover{
-    text-decoration: underline;
+#pawan{
+    padding: 0 60px; /* left-right space */
+    display: flex;
 }
