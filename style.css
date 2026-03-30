@@ -328,7 +328,8 @@ button.ghost:hover{
 }
 
 #pawan{
-    padding: 0 80px; /* left-right space */
+    padding: 0; /* left-right space */
+    marging:0;
     display: flex;
 }
 
